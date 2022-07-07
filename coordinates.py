@@ -31,6 +31,9 @@ def _get_coords_by_city_name(city_name: str) -> Coordinates:
     if location == None:
         raise CantGetCoordinates
 
+    if config.SHOW_COORDS:
+        print(location.latitude, location.longitude)
+        
     return Coordinates(latitude=location.latitude, longitude=location.longitude)
 
 
